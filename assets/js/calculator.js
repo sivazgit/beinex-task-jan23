@@ -21,8 +21,26 @@ function removeItem(){
     result.value = crntexp.slice(0,-1)
 }
 
-
-// evaluate expressions (operations)
+let val = result.values.split(" ")
+const evaluate = opr => {
+    const [num1, operation, num2] = opr.split(" ");
+    switch (operation) {
+       case "+":
+          return +num1 + +num2;
+       case "/":
+          return +num1 / +num2;
+       case "-":
+          return +num1 - +num2;
+       case "*":
+          return +num1 * +num2;
+       case "%":
+          return +num1 % +num2;
+       default:
+          return 0;
+    }
+ }
+ 
+ // evaluate expressions (operations)
 
  function evaluateExp(){
     result.value = eval(result.value)
